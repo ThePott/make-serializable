@@ -4,7 +4,10 @@
     "description": "",
     "main": "./dist/index.js",
     "scripts": {
-        "test": "tsc && npx ."
+        "generate": "npx tsx ./src/script.ts",
+        "build": "npm run generate && tsc",
+        "test": "npx .",
+        "prepublishOnly": "npm run build"
     },
     "keywords": [],
     "author": "",
@@ -16,7 +19,8 @@
     ],
     "bin": "./dist/cli.js",
     "devDependencies": {
-        "@types/node": "^25.0.10"
+        "@types/node": "^25.0.10",
+        "tsx": "^4.21.0"
     },
     "dependencies": {
         "@clack/prompts": "^0.11.0"

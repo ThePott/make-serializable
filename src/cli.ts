@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 
 import { intro, outro, isCancel, cancel, text } from "@clack/prompts"
-import { FILE_NAME, template } from "./template.js"
 import { writeFileSync } from "fs"
 import { mkdir } from "fs/promises"
+import { FILE_NAME } from "./constants.js"
+import { template } from "./template.js"
 
 const DEFAULT_PATH = "src/lib/utils"
 
