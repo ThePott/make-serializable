@@ -1,6 +1,7 @@
 import fs from "fs"
+import { BASE_DIR } from "./constants.js"
 
-const stringifiedFileContent = fs.readFileSync("./index.js", "utf8")
+const stringifiedFileContent = fs.readFileSync(`${BASE_DIR}/index.js`, "utf8")
 
 export const template = `
 /**
@@ -10,4 +11,4 @@ export const template = `
 ${stringifiedFileContent}
 `
 
-export const fileName = "make-serializable"
+export const FILE_NAME = "make-serializable.ts"

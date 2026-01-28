@@ -3,7 +3,9 @@
     "version": "0.1.2",
     "description": "",
     "main": "./dist/index.js",
-    "scripts": {},
+    "scripts": {
+        "test": "tsc && npx ."
+    },
     "keywords": [],
     "author": "",
     "license": "ISC",
