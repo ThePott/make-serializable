@@ -3,7 +3,6 @@
 import { intro, outro, isCancel, cancel, text } from "@clack/prompts"
 import { FILE_NAME, template } from "./template.js"
 import { writeFileSync } from "fs"
-import { BASE_DIR } from "./constants.js"
 import { mkdir } from "fs/promises"
 
 const DEFAULT_PATH = "src/lib/utils"
@@ -21,9 +20,9 @@ async function main() {
         return process.exit(0)
     }
 
-    const fullPath = `${BASE_DIR}/${path}`
+    const fullPath = `./${path}`
     await mkdir(fullPath, { recursive: true })
-    writeFileSync(`${BASE_DIR}/${path}/${FILE_NAME}`, template)
+    writeFileSync(`./${path}/${FILE_NAME}`, template)
 
     outro("You're all set!")
 }
