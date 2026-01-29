@@ -9,14 +9,15 @@
 - output path can be customized in CLI
 
 ```zsh
-npx make-serializable
+npx make-serializable@latest
 ```
 
 ## Usage
 
 ```ts
-// import from where you have installed
-import { makeSerializable } from "@/make-serializable"
+// NOTE: import from where you have installed
+// NOTE: default installation path is `src/lib/utils` in your project
+import { makeSerializable } from "@/lib/utils/make-serializable"
 
 router.get("/", (res, req) => {
     const unserializable = { bigNumber: BigInt(1) } // cannot pass into `res.json()`
