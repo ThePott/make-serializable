@@ -18,7 +18,9 @@
         "README.md",
         "./src/script.ts"
     ],
-    "bin": "./dist/cli.js",
+    "bin": {
+        "make-serializable": "dist/cli.js"
+    },
     "devDependencies": {
         "@types/node": "^25.0.10",
         "tsx": "^4.21.0"
