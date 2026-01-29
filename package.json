@@ -15,7 +15,8 @@
     "type": "module",
     "files": [
         "dist",
-        "README.md"
+        "README.md",
+        "./src/script.ts"
     ],
     "bin": "./dist/cli.js",
     "devDependencies": {
