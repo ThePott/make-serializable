@@ -1,5 +1,4 @@
-export const tsTemplate = `
-// NOTE: edit as your taste
+export const tsTemplate = `// NOTE: edit as your taste
 
 /**
  * @see https://www.npmjs.com/package/make-serializable
@@ -36,8 +35,7 @@ export const makeSerializable = (obj: unknown): unknown => {
 
 `
 
-export const jsTemplate = `
-/**
+export const jsTemplate = `/**
  * @see https://www.npmjs.com/package/make-serializable
  */
 export const mutateToSerializable = (obj) => {
