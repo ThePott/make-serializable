@@ -2,6 +2,7 @@
 
 - Convert every `bigint` to `string` inside of anything
 - Install inside your project, customize as your taste
+- supports both JavsScript and TypeScript projects
 
 ## Installation
 
