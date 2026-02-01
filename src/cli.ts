@@ -23,9 +23,7 @@ async function main() {
     }
 
     const currentDir = process.cwd()
-    console.log({ currentDir })
     const isTsProject = fs.readdirSync(currentDir).some((file) => file === "tsconfig.json")
-    console.log({ isTsProject })
 
     const fullPath = `./${path}`
     await mkdir(fullPath, { recursive: true })
