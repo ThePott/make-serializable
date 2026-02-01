@@ -6,7 +6,7 @@
     "scripts": {
         "generate": "npx tsx ./src/script.ts",
         "build": "npm run generate && tsc",
-        "test": "npx .",
+        "test": "npm run build && npx .",
         "prepublishOnly": "npm run build"
     },
     "keywords": [],

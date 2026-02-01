@@ -3,8 +3,9 @@
 import { intro, outro, isCancel, cancel, text } from "@clack/prompts"
 import { writeFileSync } from "fs"
 import { mkdir } from "fs/promises"
-import { FILE_NAME } from "./constants.js"
-import { template } from "./template.js"
+import { FILE_NAME_JS, FILE_NAME_TS } from "./constants.js"
+import { tsTemplate, jsTemplate } from "./template.js"
+import fs from "fs"
 
 const DEFAULT_PATH = "src/lib/utils"
 
@@ -21,9 +22,19 @@ async function main() {
         return process.exit(0)
     }
 
+    const currentDir = process.cwd()
+    console.log({ currentDir })
+    const isTsProject = fs.readdirSync(currentDir).some((file) => file === "tsconfig.json")
+    console.log({ isTsProject })
+
     const fullPath = `./${path}`
     await mkdir(fullPath, { recursive: true })
-    writeFileSync(`./${path}/${FILE_NAME}`, template)
+
+    const fileInfo = {
+        name: isTsProject ? FILE_NAME_TS : FILE_NAME_JS,
+        template: isTsProject ? tsTemplate : jsTemplate,
+    }
+    writeFileSync(`./${path}/${fileInfo.name}`, fileInfo.template)
 
     outro("You're all set!")
 }

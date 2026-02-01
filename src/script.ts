@@ -1,15 +1,20 @@
 import fs from "fs"
 
-const source = fs.readFileSync("./src/index.ts", "utf-8")
+const tsSource = fs.readFileSync("./src/index.ts", "utf-8")
+const jsSource = fs.readFileSync("./dist/index.js", "utf-8")
 
-const templateContent = `
-export const template = \`
-// NOTE: edit as your taste
+const templateContent = `export const tsTemplate = \`// NOTE: edit as your taste
 
 /**
  * @see https://www.npmjs.com/package/make-serializable
  */
-${source}
+${tsSource}
+\`
+
+export const jsTemplate = \`/**
+ * @see https://www.npmjs.com/package/make-serializable
+ */
+${jsSource}
 \`
 `
 
